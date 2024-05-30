@@ -1,0 +1,74 @@
+{
+  "compilerOptions": {
+    "types": [
+      "vitest/globals"
+    ],
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@apis/*": [
+        "api-hooks/*"
+      ],
+      "@redux/*": [
+        "redux/*"
+      ],
+      "@types/*": [
+        "types/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      // "@shared/*": ["shared-components/*"],
+      "@shared-components/*": [
+        "shared-components/*"
+      ],
+      "@shared-components-mui/*": [
+        "components-materialUi/shared-components/*"
+      ],
+      "@shared-components-antd/*": [
+        "components-antd/shared-components/*"
+      ]
+    }
+  },
+  "include": [
+    ".eslintrc.cjs",
+    "./src/**/*",
+    "./src/**/**/*",
+    "./vite.config.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}
