@@ -2,9 +2,16 @@ import { Suspense } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Container from '@mui/material/Container';
 import { Outlet } from 'react-router-dom';
-import { AppMainWrapperDiv } from '../../styles/app-wrapper.styles';
 import ExampleNavBar from './navbar-example';
-import useGetResponsiveness from '../hook/useGetResponsiveness';
+import useGetResponsiveness from '@hooks/useGetResponsiveness';
+import { styled } from '@mui/material/styles';
+
+//  Example of styled components
+export const AppMainWrapperDiv = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  position: 'relative',
+});
 
 function AppWrapper() {
   const { isMobile } = useGetResponsiveness()

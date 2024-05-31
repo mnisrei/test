@@ -1,16 +1,12 @@
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import ErrorMessage from '../../shared-components/ErrorMessage';
 import { useSignup } from '@apis/useSignup';
-import { SignupData } from '../../../types/signUp.types';
-import InputControllerWrapper from '@shared-components-mui/controller-wrapper/input-controller-wrapper';
-import CheckboxControllerWrapper from '@shared-components-mui/controller-wrapper/checkbox-controller-wrapper copy';
+import { SignupData } from '@types/signUp.types';
+import InputControllerWrapper from '@shared-components/controller-wrapper/input-controller-wrapper';
+import CheckboxControllerWrapper from '@shared-components/controller-wrapper/checkbox-controller-wrapper';
 
 interface IFormInput extends SignupData {
   confirmPassword: string;
@@ -55,7 +51,7 @@ const Signup: React.FC = () => {
         <InputControllerWrapper
           controlId="name"
           controlName="name"
-          control={control}
+          formContext={control}
           controlValidationRules={{
             required: 'Name is required',
           }}
@@ -67,7 +63,7 @@ const Signup: React.FC = () => {
         <InputControllerWrapper
           controlId="email"
           controlName="email"
-          control={control}
+          formContext={control}
           controlValidationRules={{
             required: 'Email is required',
             pattern: {
@@ -83,7 +79,7 @@ const Signup: React.FC = () => {
         <InputControllerWrapper
           controlId="password"
           controlName="password"
-          control={control}
+          formContext={control}
           controlValidationRules={{
             required: 'Password is required',
             minLength: {
@@ -99,7 +95,7 @@ const Signup: React.FC = () => {
         <InputControllerWrapper
           controlName="confirmPassword"
           controlId="confirmPassword"
-          control={control}
+          formContext={control}
           controlValidationRules={{
             required: 'Confirm Password is required',
             validate: value => value === password || 'Passwords do not match',
@@ -112,7 +108,7 @@ const Signup: React.FC = () => {
         <InputControllerWrapper
           controlName="avatar"
           controlId="avatar"
-          control={control}
+          formContext={control}
           controlValidationRules={{
             required: 'Avatar URL is required',
             pattern: {
@@ -127,7 +123,7 @@ const Signup: React.FC = () => {
         />
         <CheckboxControllerWrapper
           controlName="terms"
-          control={control}
+          formContext={control}
           controlValidationRules={{
             required: 'You must accept the terms and conditions',
           }}

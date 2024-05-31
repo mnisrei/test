@@ -1,8 +1,8 @@
 import { Controller, Control, FieldValues, RegisterOptions } from 'react-hook-form'
-import InputWrapper from '../widget-wrapper/input-wrapper'
 import { Typography } from 'antd'
+import CheckboxWrapper from '@shared-components/widget-wrapper/checkbox-wrapper'
 
-function InputControllerWrapper({ formContext, controlName = '', controlId, placeHolder, label, error, errorMessage, controlValidationRules }: {
+function CheckboxControllerWrapper({ formContext, controlName = '', controlId, label, placeHolder, error, errorMessage, controlValidationRules }: {
     formContext?: Control<any>,
     controlName?: string,
     controlId?: string,
@@ -32,12 +32,12 @@ function InputControllerWrapper({ formContext, controlName = '', controlId, plac
                 control={formContext}
                 rules={controlValidationRules}
                 render={({ field }) => (
-                    <InputWrapper
+                    <CheckboxWrapper
                         id={controlId}
-                        placeholder={placeHolder}
-                        status={error ? 'error' : ''}
                         {...field}
-                    />
+                    >
+                        {placeHolder}
+                    </CheckboxWrapper>
                 )}
             />
             {
@@ -51,4 +51,4 @@ function InputControllerWrapper({ formContext, controlName = '', controlId, plac
 
 
 
-export default InputControllerWrapper
+export default CheckboxControllerWrapper

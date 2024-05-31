@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useLogin } from '@apis/useLogin';
-import InputControllerWrapper from '@shared-components-mui/controller-wrapper/input-controller-wrapper';
+import InputControllerWrapper from '@shared-components/controller-wrapper/input-controller-wrapper';
 
 interface IFormInput {
   email: string;
@@ -43,7 +43,7 @@ const Login: React.FC = () => {
         <InputControllerWrapper
           label='Email'
           placeHolder='Email'
-          control={control}
+          formContext={control}
           controlId='email'
           controlName='email'
           controlValidationRules={{
@@ -59,7 +59,7 @@ const Login: React.FC = () => {
         <InputControllerWrapper
           label='Password'
           placeHolder='Password'
-          control={control}
+          formContext={control}
           controlId='password'
           controlName='password'
           controlValidationRules={{

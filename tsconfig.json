@@ -46,17 +46,10 @@
         "types/*"
       ],
       "@pages/*": [
-        "pages/*"
+        "components/pages/*"
       ],
-      // "@shared/*": ["shared-components/*"],
       "@shared-components/*": [
-        "shared-components/*"
-      ],
-      "@shared-components-mui/*": [
-        "components-materialUi/shared-components/*"
-      ],
-      "@shared-components-antd/*": [
-        "components-antd/shared-components/*"
+        "components/shared-components/*"
       ]
     }
   },

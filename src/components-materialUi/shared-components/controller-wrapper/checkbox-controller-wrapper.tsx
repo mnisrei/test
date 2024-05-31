@@ -1,8 +1,8 @@
+import { FormControlLabel, Typography } from '@mui/material'
+import CheckboxWrapper from '@shared-components/widget-wrapper/checkbox-wrapper'
 import { Controller, Control, FieldValues, RegisterOptions } from 'react-hook-form'
-import { Typography } from '@mui/material'
-import InputWrapper from '@shared-components/widget-wrapper/input-wrapper'
 
-function InputControllerWrapper({ formContext, controlName = '', controlId, placeHolder, label, error, errorMessage, controlValidationRules }: {
+function CheckboxControllerWrapper({ formContext, controlName = '', controlId, label, placeHolder, error, errorMessage, controlValidationRules }: {
     formContext?: Control<any>,
     controlName?: string,
     controlId?: string,
@@ -10,8 +10,9 @@ function InputControllerWrapper({ formContext, controlName = '', controlId, plac
     placeHolder?: string
     label?: string
     errorMessage?: string
-    controlValidationRules?: Omit<RegisterOptions<FieldValues, string>, "valueAsNumber" | "valueAsDate" | "setValueAs" | "disabled">,
+    controlValidationRules?: Omit<RegisterOptions<FieldValues, string>, "valueAsNumber" | "valueAsDate" | "setValueAs" | "disabled">
 }) {
+
     return (
         <div style={{
             display: 'flex',
@@ -30,18 +31,15 @@ function InputControllerWrapper({ formContext, controlName = '', controlId, plac
                 control={formContext}
                 rules={controlValidationRules}
                 render={({ field }) => (
-                    <InputWrapper
+                    <FormControlLabel
+                        label={placeHolder}
                         id={controlId}
-                        placeholder={placeHolder}
-                        error={error}
-                        sx={{
-                            input: {
-                                color: 'black',
-                                width: '100%'
-                            }
-                        }}
                         {...field}
+                        control={
+                            <CheckboxWrapper />
+                        }
                     />
+
                 )}
             />
             {
@@ -55,4 +53,4 @@ function InputControllerWrapper({ formContext, controlName = '', controlId, plac
 
 
 
-export default InputControllerWrapper
+export default CheckboxControllerWrapper

@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import LoginPage from ' components-materialUi/pages/Login';
+import LoginPage from '@components/pages/Login';
 
 describe('LoginForm', () => {
   it('renders the login form components correctly', () => {
